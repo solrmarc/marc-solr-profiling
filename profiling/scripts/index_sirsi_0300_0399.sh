@@ -9,7 +9,7 @@
 LOG_SUBDIR=$1
 
 HOMEDIR=/home/blacklight
-SOLRMARC_BASEDIR=$HOMEDIR/solrmarc-sw
+SOLRMARC_BASEDIR=$HOMEDIR/music-profiling
 
 RAW_DATA_DIR=/data/sirsi/latest
 
@@ -17,7 +17,7 @@ JAVA_HOME=/usr/lib/jvm/java
 
 # set up the classpath
 DIST_DIR=$SOLRMARC_BASEDIR/dist
-SITE_JAR=$DIST_DIR/StanfordSearchWorksSolrMarc.jar
+SITE_JAR=$DIST_DIR/ProfilingSolrMarc.jar
 CP=$SITE_JAR:$DIST_DIR:$DIST_DIR/lib
 
 # create log directory
