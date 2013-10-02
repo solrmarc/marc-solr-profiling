@@ -1,6 +1,5 @@
-This is a FORK of the SolrMarc project;  it was streamlined for the single
-purpose of indexing Stanford Marc data for the SearchWorks application
-(a Blacklight application).
+This is a FORK of the SolrMarc project;  it is streamlined for the single
+purpose of profiling Marc data with a Solr index.
 
 SolrMarc is a utility that reads in MaRC records from a file, extracts 
 information from various fields as specified in an indexing configuration 
