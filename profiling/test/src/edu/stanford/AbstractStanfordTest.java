@@ -13,7 +13,7 @@ public abstract class AbstractStanfordTest extends AbstractTest
 
 // FIXME:  ensure log4j.properties is in bin
 
-	protected String siteDir = "stanford-sw";
+	protected String siteDir = "profiling";
 
 	// set up required properties when tests not invoked via Ant
 	// hardcodings below are only used when the tests are invoked without the
@@ -21,7 +21,7 @@ public abstract class AbstractStanfordTest extends AbstractTest
 	{
         String configPropFile = System.getProperty("test.config.file");
 		if (configPropFile == null)
-            System.setProperty("test.config.file", siteDir + File.separator + "sw_config.properties");
+            System.setProperty("test.config.file", siteDir + File.separator + "prof_config.properties");
 
         // used to find site translation_maps
 		if (System.getProperty("solrmarc.site.path") == null)
