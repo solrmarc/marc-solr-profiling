@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 import org.marc4j.marc.Record;
+import org.solrmarc.tools.SolrMarcIndexerException;
 
 import static org.junit.Assert.*;
 
@@ -40,6 +41,11 @@ public class SolrFieldMappingTest
         marcMappingTest = new MarcMappingOnly();
         marcMappingTest.init(new String[] { configPropsName, idFldName });
         this.idFldName = idFldName;
+    }
+
+    public void assertNoRecordExists(Record record)
+    {
+        assert(marcMappingTest.getIndexMapForRecord(record).size() == 0);
     }
 
     /**
