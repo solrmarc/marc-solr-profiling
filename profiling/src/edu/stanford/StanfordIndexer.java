@@ -211,6 +211,25 @@ public class StanfordIndexer extends org.solrmarc.index.SolrIndexer
 // Id Methods  --------------------- End ---------------------------- Id Methods
 
 
+// Collection Methods ------------ Begin -------------------- Collection Methods
+	/**
+	 * assign a value of "music" to any record with a format of
+	 *   Music - Score
+	 *   Music - Recording
+	 *   Sound Recording
+	 * or if there is an item with an M call number with a record format of:
+	 *   Book,
+	 *   Thesis,
+	 *   Conf proceedings
+	 * @return String 'music' or null
+	 */
+	public String getMusicRecords(final Record record)
+	{
+		return null;
+	}
+
+// Collection Methods ------------ -End --------------------- Collection Methods
+
 // Format Methods  --------------- Begin ------------------------ Format Methods
 
 	/**
