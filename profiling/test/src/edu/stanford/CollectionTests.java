@@ -20,7 +20,6 @@ public class CollectionTests extends AbstractStanfordTest
 	private static ControlField cf008generic = factory.newControlField("008");
 	{
 		cf008generic.setData("130625s2014    maua    a    0    0eng  ");
-//		130625s2014 maua o 001 0 eng d
 	}
 
 	// 999s
@@ -74,12 +73,6 @@ public class CollectionTests extends AbstractStanfordTest
 		mappingTestInit();
 	}
 
-//	# select:
-//		#   format: Sound Recording ?
-//		#   Book, Thesis, Conf proceedings  with M call number
-//		#
-
-
 @Test
 	public void testMusicScoreFormat()
 	{
@@ -125,6 +118,11 @@ public class CollectionTests extends AbstractStanfordTest
 	}
 
 
+//#   Book, Thesis, Conf proceedings  with M call number
+
+
+
+
 	public void testAddlFormatsWithMCallNum()
 	{
 
@@ -147,36 +145,5 @@ public class CollectionTests extends AbstractStanfordTest
 		record.addVariableField(df999nonMusicNonLCM);
 		solrFldMapTest.assertNoRecordExists(record);
 	}
-
-
-	/**
-	 * there should be no indexed record if there is no value returned
-	 */
-	public void testNotMusic()
-	{
-        // Except for 905, 920 and 986 (SW-814)
-		mappingTestInit();
-		Record record = factory.newRecord();
-        DataField df = factory.newDataField("905", ' ', ' ');
-        df.addSubfield(factory.newSubfield('a', "905a"));
-        df.addSubfield(factory.newSubfield('r', "905r"));
-        df.addSubfield(factory.newSubfield('t', "905t"));
-        record.addVariableField(df);
-        df = factory.newDataField("908", ' ', ' ');
-        df.addSubfield(factory.newSubfield('a', "908a"));
-        df.addSubfield(factory.newSubfield('b', "908b"));
-        record.addVariableField(df);
-        df = factory.newDataField("920", ' ', ' ');
-        df.addSubfield(factory.newSubfield('a', "920a"));
-        df.addSubfield(factory.newSubfield('b', "920b"));
-        record.addVariableField(df);
-        df = factory.newDataField("986", ' ', ' ');
-        df.addSubfield(factory.newSubfield('1', "986a"));
-        record.addVariableField(df);
-        solrFldMapTest.assertSolrFldValue(record, fldName, "905a 905r 905t 908a 908b 920a 920b 986a");
-
-	}
-
-
 
 }
