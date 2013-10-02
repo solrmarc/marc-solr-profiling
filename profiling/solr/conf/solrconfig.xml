@@ -78,10 +78,6 @@
       <str name="q.op">AND</str>
       <str name="qf">
         id
-				marcxml
-      </str>
-      <str name="pf">
-        marcxml^5
       </str>
 
 			<str name="fl">score, *</str>
@@ -254,7 +250,7 @@
       <str name="facet.field">lc_alpha_facet</str>
         <str name="f.lc_alpha_facet.facet.method">enum</str>
       <str name="facet.field">lc_b4cutter_facet</str>
-      <str name="facet.field">pub_year_tisim</str>
+      <str name="facet.field">pub_year_itsim</str>
     </lst>
   </requestHandler>
 
@@ -286,7 +282,7 @@
     <lst name="defaults">
       <str name="defType">lucene</str>
       <str name="echoParams">explicit</str>
-      <str name="df">marcxml</str>
+      <str name="df">id</str>
       <str name="q.op">AND</str>
       <str name="sort">score desc</str>
 
@@ -458,7 +454,7 @@
       <str name="facet.field">lc_alpha_facet</str>
         <str name="f.lc_alpha_facet.facet.method">enum</str>
       <str name="facet.field">lc_b4cutter_facet</str>
-      <str name="facet.field">pub_year_tisim</str>
+      <str name="facet.field">pub_year_itsim</str>
     </lst>
   </requestHandler>
 
