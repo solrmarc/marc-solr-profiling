@@ -227,7 +227,8 @@ public class StanfordIndexer extends org.solrmarc.index.SolrIndexer
 	{
 		String COLL_VAL = "music";
 		if (formats.contains(Format.MUSIC_SCORE.toString()) ||
-			formats.contains(Format.MUSIC_RECORDING.toString()))
+			formats.contains(Format.MUSIC_RECORDING.toString()) ||
+			formats.contains(Format.SOUND_RECORDING.toString()))
 			return COLL_VAL;
 
 		if (formats.contains(Format.BOOK.toString()))

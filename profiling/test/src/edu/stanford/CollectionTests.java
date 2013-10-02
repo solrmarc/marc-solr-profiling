@@ -102,9 +102,15 @@ public class CollectionTests extends AbstractStanfordTest
 		solrFldMapTest.assertSolrFldValue(record, fldName, "music");
 	}
 
+@Test
 	public void testSoundRecordingFormat()
 	{
-
+		Record record = factory.newRecord();
+		record.setLeader(factory.newLeader("01294cim a2200313Ia 4500"));
+		record.addVariableField(cf008generic);
+		record.addVariableField(df999musicM);
+		solrFldMapTest.assertSolrFldValue(record, "format", Format.SOUND_RECORDING.toString());
+		solrFldMapTest.assertSolrFldValue(record, fldName, "music");
 	}
 
 @Test
