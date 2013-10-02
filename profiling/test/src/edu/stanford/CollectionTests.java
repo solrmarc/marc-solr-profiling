@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.marc4j.marc.*;
 
+import edu.stanford.enumValues.Format;
+
 /**
  * junit4 tests for collection selection methods in StanfordIndexer
  * @author Naomi Dushay
@@ -14,10 +16,11 @@ public class CollectionTests extends AbstractStanfordTest
 	private static MarcFactory factory = MarcFactory.newInstance();
 
 	// Fixed Fields
-	private static Leader bookLeader = factory.newLeader("01247caa a2200337 a 4500");
+	private static Leader bookLeader = factory.newLeader("01539nam a2200421 a 4500");
 	private static ControlField cf008generic = factory.newControlField("008");
 	{
-		cf008generic.setData("830415c19809999vauuu    a    0    0eng  ");
+		cf008generic.setData("130625s2014    maua    a    0    0eng  ");
+//		130625s2014 maua o 001 0 eng d
 	}
 
 	// 999s
@@ -72,21 +75,31 @@ public class CollectionTests extends AbstractStanfordTest
 	}
 
 //	# select:
-//		#   format: Music - Score
-//		#   format: Music - Recording
 //		#   format: Sound Recording ?
 //		#   Book, Thesis, Conf proceedings  with M call number
 //		#
 
 
+@Test
 	public void testMusicScoreFormat()
 	{
-
+		Record record = factory.newRecord();
+		record.setLeader(factory.newLeader("01262ncm a22002898i 4500"));
+		record.addVariableField(cf008generic);
+		record.addVariableField(df999musicM);
+		solrFldMapTest.assertSolrFldValue(record, "format", Format.MUSIC_SCORE.toString());
+		solrFldMapTest.assertSolrFldValue(record, fldName, "music");
 	}
 
+@Test
 	public void testMusicRecordingFormat()
 	{
-
+		Record record = factory.newRecord();
+		record.setLeader(factory.newLeader("02270cjm a2200421Ia 4500"));
+		record.addVariableField(cf008generic);
+		record.addVariableField(df999musicM);
+		solrFldMapTest.assertSolrFldValue(record, "format", Format.MUSIC_RECORDING.toString());
+		solrFldMapTest.assertSolrFldValue(record, fldName, "music");
 	}
 
 	public void testSoundRecordingFormat()
@@ -101,7 +114,7 @@ public class CollectionTests extends AbstractStanfordTest
 		record.setLeader(bookLeader);
 		record.addVariableField(cf008generic);
 	    record.addVariableField(df999musicM);
-	    solrFldMapTest.assertSolrFldValue(record, "format", "Book");
+	    solrFldMapTest.assertSolrFldValue(record, "format", Format.BOOK.toString());
 	    solrFldMapTest.assertSolrFldValue(record, fldName, "music");
 	}
 
