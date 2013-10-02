@@ -225,6 +225,21 @@ public class StanfordIndexer extends org.solrmarc.index.SolrIndexer
 	 */
 	public String getMusicRecords(final Record record)
 	{
+		String COLL_VAL = "music";
+		if (formats.contains(Format.MUSIC_SCORE.toString()) ||
+			formats.contains(Format.MUSIC_RECORDING.toString()))
+			return COLL_VAL;
+
+		if (formats.contains(Format.BOOK.toString()))
+		{
+			for (String callnum : lcCallnums) {
+				String letters = org.solrmarc.tools.CallNumUtils.getLCstartLetters(callnum);
+				if (letters != null && letters.equals("M"))
+					return COLL_VAL;
+				else
+					return null;
+			}
+		}
 		return null;
 	}
 
