@@ -64,7 +64,7 @@ public abstract class AbstractTest extends IndexTest
 		// these properties must be set or MarcHandler can't initialize properly
 		System.setProperty("marc.source", "FILE");
 		// needed to get through initialization; overridden in individual tests
-		System.setProperty("marc.path", testDataParentPath + File.separator + "pubDateTests.mrc");
+		System.setProperty("marc.path", testDataParentPath + File.separator + "7621542.mrc");
 		String testConfigFname = getRequiredSystemProperty("test.config.file");
 		try
 		{
