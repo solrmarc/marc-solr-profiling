@@ -143,26 +143,27 @@
       <str name="facet.field">f046k_sim</str>
       <str name="facet.field">f046kl_sim</str>
       <str name="facet.field">f046_sim</str>
-      <str name="facet.field">f047_si</str>
+      <str name="facet.field">f047_sim</str>
       <str name="facet.field">f048_sim</str>
       <str name="facet.field">f050_sim</str>
 
-      <str name="facet.field">f100e_si</str>
+      <str name="facet.field">f100e_sim</str>
       <str name="facet.field">f100_si</str>
-      <str name="facet.field">f110e_si</str>
+      <str name="facet.field">f110e_sim</str>
       <str name="facet.field">f110_si</str>
+      <str name="facet.field">f111e_sim</str>
       <str name="facet.field">f111_si</str>
 
       <str name="facet.field">f130h_si</str>
       <str name="facet.field">f130l_si</str>
-      <str name="facet.field">f130m_si</str>
-      <str name="facet.field">f130n_si</str>
+      <str name="facet.field">f130m_sim</str>
+      <str name="facet.field">f130n_sim</str>
       <str name="facet.field">f130o_si</str>
       <str name="facet.field">f130r_si</str>
       <str name="facet.field">f130_si</str>
 
-      <str name="facet.field">f240m_si</str>
-      <str name="facet.field">f240n_si</str>
+      <str name="facet.field">f240m_sim</str>
+      <str name="facet.field">f240n_sim</str>
       <str name="facet.field">f240o_si</str>
       <str name="facet.field">f240r_si</str>
       <str name="facet.field">f245h_si</str>
@@ -347,26 +348,27 @@
       <str name="facet.field">f046k_sim</str>
       <str name="facet.field">f046kl_sim</str>
       <str name="facet.field">f046_sim</str>
-      <str name="facet.field">f047_si</str>
+      <str name="facet.field">f047_sim</str>
       <str name="facet.field">f048_sim</str>
       <str name="facet.field">f050_sim</str>
 
-      <str name="facet.field">f100e_si</str>
+      <str name="facet.field">f100e_sim</str>
       <str name="facet.field">f100_si</str>
-      <str name="facet.field">f110e_si</str>
+      <str name="facet.field">f110e_sim</str>
       <str name="facet.field">f110_si</str>
+      <str name="facet.field">f111e_sim</str>
       <str name="facet.field">f111_si</str>
 
       <str name="facet.field">f130h_si</str>
       <str name="facet.field">f130l_si</str>
-      <str name="facet.field">f130m_si</str>
-      <str name="facet.field">f130n_si</str>
+      <str name="facet.field">f130m_sim</str>
+      <str name="facet.field">f130n_sim</str>
       <str name="facet.field">f130o_si</str>
       <str name="facet.field">f130r_si</str>
       <str name="facet.field">f130_si</str>
 
-      <str name="facet.field">f240m_si</str>
-      <str name="facet.field">f240n_si</str>
+      <str name="facet.field">f240m_sim</str>
+      <str name="facet.field">f240n_sim</str>
       <str name="facet.field">f240o_si</str>
       <str name="facet.field">f240r_si</str>
       <str name="facet.field">f245h_si</str>
