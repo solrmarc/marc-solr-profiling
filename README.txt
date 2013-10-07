@@ -1,3 +1,5 @@
+<img src="https://secure.travis-ci.org/solrmarc/marc-solr-profiling.png?branch=master" alt="Build Status" />
+
 This is a FORK of the SolrMarc** project;  it is streamlined for the single
 purpose of profiling Marc data with a Solr index.
 
