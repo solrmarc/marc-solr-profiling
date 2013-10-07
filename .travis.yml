@@ -1,0 +1,6 @@
+language: java
+script: "ant test_site"
+jdk:
+  - openjdk6
+  - openjdk7
+  - oraclejdk7
