@@ -1,5 +1,33 @@
-This is a FORK of the SolrMarc project;  it is streamlined for the single
+This is a FORK of the SolrMarc** project;  it is streamlined for the single
 purpose of profiling Marc data with a Solr index.
+
+
+Usage
+
+* clone the project
+  git clone git://github.com/solrmarc/marc-solr-profiling.git
+* create a Solr instance for the profiling
+** see profiling/solr  for config files, solr war file, solr.xml, etc.
+** see Solr project at http://lucene.apache.org/solr
+* run the dist ant task
+  ant dist
+* create a script to run your marc data through the solrmarc instance to write to a Solr index
+  (see examples in profiling/scripts)
+* run your script
+
+* Query the Solr index to see your data
+
+
+Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+
+More on the SolrMarc project
 
 SolrMarc is a utility that reads in MaRC records from a file, extracts 
 information from various fields as specified in an indexing configuration 
@@ -14,3 +42,4 @@ Aside from inline comments, the best place to find documentation is on the
 non-forked SolrMarc project pages at
 
 http://code.google.com/p/solrmarc/w/list
+
