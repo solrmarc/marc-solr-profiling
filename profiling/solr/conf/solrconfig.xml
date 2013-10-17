@@ -135,9 +135,28 @@
  	 		<str name="f.f008_33_si.facet.method">enum</str>
       <str name="facet.field">f008_35-37_si</str>
 
+      <str name="facet.field">f024_0a_sim</str>
+      <str name="facet.field">f024_0z_sim</str>
+      <str name="facet.field">f024_1a_sim</str>
+      <str name="facet.field">f024_1z_sim</str>
+      <str name="facet.field">f024_2a_sim</str>
+      <str name="facet.field">f024_2z_sim</str>
+      <str name="facet.field">f024_3a_sim</str>
+      <str name="facet.field">f024_3z_sim</str>
+      <str name="facet.field">f024_4a_sim</str>
+      <str name="facet.field">f024_4z_sim</str>
+      <str name="facet.field">f024_5a_sim</str>
+      <str name="facet.field">f024_5z_sim</str>
+      <str name="facet.field">f024_6a_sim</str>
+      <str name="facet.field">f024_6z_sim</str>
+      <str name="facet.field">f024_7a_sim</str>
+      <str name="facet.field">f024_7z_sim</str>
+      <str name="facet.field">f024_8a_sim</str>
+      <str name="facet.field">f024_8z_sim</str>
       <str name="facet.field">f033a_sim</str>
       <str name="facet.field">f033bc_sim</str>
-      <str name="facet.field">f041_sim</str>
+      <str name="facet.field">f041a_sim</str>
+      <str name="facet.field">f041d_sim</str>
       <str name="facet.field">f043_si</str>
       <str name="facet.field">f045_si</str>
       <str name="facet.field">f046k_sim</str>
@@ -147,10 +166,13 @@
       <str name="facet.field">f048_sim</str>
       <str name="facet.field">f050_sim</str>
 
+      <str name="facet.field">f1004_sim</str>
       <str name="facet.field">f100e_sim</str>
       <str name="facet.field">f100_si</str>
+      <str name="facet.field">f1104_sim</str>
       <str name="facet.field">f110e_sim</str>
       <str name="facet.field">f110_si</str>
+      <str name="facet.field">f1114_sim</str>
       <str name="facet.field">f111e_sim</str>
       <str name="facet.field">f111_si</str>
 
@@ -202,11 +224,13 @@
       <str name="facet.field">f610abcdgnu_sim</str>
       <str name="facet.field">f611acdefgnpqu_sim</str>
       <str name="facet.field">f650v_sim</str>
+      <str name="facet.field">f650x_sim</str>
       <str name="facet.field">f650y_sim</str>
       <str name="facet.field">f650z_sim</str>
       <str name="facet.field">f650_sim</str>
       <str name="facet.field">f655_sim</str>
 
+      <str name="facet.field">f7004_sim</str>
       <str name="facet.field">f700e_sim</str>
       <str name="facet.field">f700abcdejq_sim</str>
       <str name="facet.field">f700m_sim</str>
@@ -215,6 +239,7 @@
       <str name="facet.field">f700p_sim</str>
       <str name="facet.field">f700r_sim</str>
       <str name="facet.field">f700klmnoprst_sim</str>
+      <str name="facet.field">f7104_sim</str>
       <str name="facet.field">f710e_sim</str>
       <str name="facet.field">f710abcdegn_sim</str>
       <str name="facet.field">f710m_sim</str>
@@ -225,6 +250,7 @@
       <str name="facet.field">f710klmnoprst_sim</str>
       <str name="facet.field">f711acdefgnpqu_sim</str>
       <str name="facet.field">f711klnpst_sim</str>
+      <str name="facet.field">f7114_sim</str>
 
       <str name="facet.field">f730m_sim</str>
       <str name="facet.field">f730n_sim</str>
@@ -340,9 +366,28 @@
  	 		<str name="f.f008_33_si.facet.method">enum</str>
       <str name="facet.field">f008_35-37_si</str>
 
+      <str name="facet.field">f024_0a_sim</str>
+      <str name="facet.field">f024_0z_sim</str>
+      <str name="facet.field">f024_1a_sim</str>
+      <str name="facet.field">f024_1z_sim</str>
+      <str name="facet.field">f024_2a_sim</str>
+      <str name="facet.field">f024_2z_sim</str>
+      <str name="facet.field">f024_3a_sim</str>
+      <str name="facet.field">f024_3z_sim</str>
+      <str name="facet.field">f024_4a_sim</str>
+      <str name="facet.field">f024_4z_sim</str>
+      <str name="facet.field">f024_5a_sim</str>
+      <str name="facet.field">f024_5z_sim</str>
+      <str name="facet.field">f024_6a_sim</str>
+      <str name="facet.field">f024_6z_sim</str>
+      <str name="facet.field">f024_7a_sim</str>
+      <str name="facet.field">f024_7z_sim</str>
+      <str name="facet.field">f024_8a_sim</str>
+      <str name="facet.field">f024_8z_sim</str>
       <str name="facet.field">f033a_sim</str>
       <str name="facet.field">f033bc_sim</str>
-      <str name="facet.field">f041_sim</str>
+      <str name="facet.field">f041a_sim</str>
+      <str name="facet.field">f041d_sim</str>
       <str name="facet.field">f043_si</str>
       <str name="facet.field">f045_si</str>
       <str name="facet.field">f046k_sim</str>
@@ -352,10 +397,13 @@
       <str name="facet.field">f048_sim</str>
       <str name="facet.field">f050_sim</str>
 
+      <str name="facet.field">f1004_sim</str>
       <str name="facet.field">f100e_sim</str>
       <str name="facet.field">f100_si</str>
+      <str name="facet.field">f1104_sim</str>
       <str name="facet.field">f110e_sim</str>
       <str name="facet.field">f110_si</str>
+      <str name="facet.field">f1114_sim</str>
       <str name="facet.field">f111e_sim</str>
       <str name="facet.field">f111_si</str>
 
@@ -407,11 +455,13 @@
       <str name="facet.field">f610abcdgnu_sim</str>
       <str name="facet.field">f611acdefgnpqu_sim</str>
       <str name="facet.field">f650v_sim</str>
+      <str name="facet.field">f650x_sim</str>
       <str name="facet.field">f650y_sim</str>
       <str name="facet.field">f650z_sim</str>
       <str name="facet.field">f650_sim</str>
       <str name="facet.field">f655_sim</str>
 
+      <str name="facet.field">f7004_sim</str>
       <str name="facet.field">f700e_sim</str>
       <str name="facet.field">f700abcdejq_sim</str>
       <str name="facet.field">f700m_sim</str>
@@ -420,6 +470,7 @@
       <str name="facet.field">f700p_sim</str>
       <str name="facet.field">f700r_sim</str>
       <str name="facet.field">f700klmnoprst_sim</str>
+      <str name="facet.field">f7104_sim</str>
       <str name="facet.field">f710e_sim</str>
       <str name="facet.field">f710abcdegn_sim</str>
       <str name="facet.field">f710m_sim</str>
@@ -430,6 +481,7 @@
       <str name="facet.field">f710klmnoprst_sim</str>
       <str name="facet.field">f711acdefgnpqu_sim</str>
       <str name="facet.field">f711klnpst_sim</str>
+      <str name="facet.field">f7114_sim</str>
 
       <str name="facet.field">f730m_sim</str>
       <str name="facet.field">f730n_sim</str>
