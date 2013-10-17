@@ -101,6 +101,8 @@ public class StanfordIndexer extends org.solrmarc.index.SolrIndexer
 	Set<String> f020suba;
 	/** Set of 020 subfield z */
 	Set<String> f020subz;
+	/** List of 024 DataFields */
+	List<DataField> list024df;
 	/** Set of 655 subfield a */
 	Set<String> f655suba;
 	/** Set of 956 subfield u */
@@ -136,6 +138,7 @@ public class StanfordIndexer extends org.solrmarc.index.SolrIndexer
 		f020subz = MarcUtils.getFieldList(record, "020z");
 		f655suba = MarcUtils.getFieldList(record, "655a");
 		f956subu = MarcUtils.getFieldList(record, "956u");
+		list024df = (List<DataField>) record.getVariableFields("024");
 
 		List<DataField> list999df = (List<DataField>) record.getVariableFields("999");
 		has999s = !list999df.isEmpty();
@@ -357,6 +360,36 @@ public class StanfordIndexer extends org.solrmarc.index.SolrIndexer
 // Language Methods ----------------- End --------------------- Language Methods
 
 // Standard Number Methods --------- Begin ------------- Standard Number Methods
+
+	/**
+	 * returns the values of the indicated subfields from the 024 if the first
+	 * indicator matches the desired indicator1 value
+	 * @param record a marc4j Record object
+	 * @param desiredInd1Val the desired value of indicator 1
+     * @param desiredSubFlds - which 024 subfields to use as values
+	 * @return Set of strings containing ISBN numbers
+	 */
+	public Set<String> get024(final Record record, String desiredInd1Val, String desiredSubFlds)
+	{
+		Set<String> results = new LinkedHashSet<String>();
+		for (DataField df024 : list024df)
+		{
+			if (df024.getIndicator1() == desiredInd1Val.charAt(0))
+			{
+				for (int i = 0; i < desiredSubFlds.length(); i++)
+				{
+					List<Subfield> subflds = df024.getSubfields(desiredSubFlds.charAt(i));
+					for (Subfield sub : subflds )
+					{
+						String val = sub.getData();
+						if (val != null && val.length() > 0)
+							results.add(sub.getData());
+					}
+				}
+			}
+		}
+		return results;
+	}
 
 	/**
 	 * returns the ISBN(s) from a record for external lookups (such as Google
