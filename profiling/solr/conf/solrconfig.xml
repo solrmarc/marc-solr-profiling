@@ -259,11 +259,10 @@
       <str name="facet.field">f730r_sim</str>
       <str name="facet.field">f730_sim</str>
       <str name="facet.field">f740_sim</str>
+      <str name="facet.field">f7xxi_sim</str>
 
       <str name="facet.field">f020a_sim</str>
       <str name="facet.field">f020z_sim</str>
-      <str name="facet.field">f024a_sim</str>
-      <str name="facet.field">f024z_sim</str>
       <str name="facet.field">f028a_sim</str>
       <str name="facet.field">f028b_sim</str>
       <str name="facet.field">f031r_sim</str>
@@ -490,11 +489,10 @@
       <str name="facet.field">f730r_sim</str>
       <str name="facet.field">f730_sim</str>
       <str name="facet.field">f740_sim</str>
+      <str name="facet.field">f7xxi_sim</str>
 
       <str name="facet.field">f020a_sim</str>
       <str name="facet.field">f020z_sim</str>
-      <str name="facet.field">f024a_sim</str>
-      <str name="facet.field">f024z_sim</str>
       <str name="facet.field">f028a_sim</str>
       <str name="facet.field">f028b_sim</str>
       <str name="facet.field">f031r_sim</str>

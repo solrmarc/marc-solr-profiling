@@ -10,6 +10,7 @@ import org.junit.runners.Suite;
         CallNumUtilsLoppingUnitTests.class,
         CollectionTests.class,
         Get024Tests.class,
+        Get7xxiTests.class,
         LeaderByteTests.class,
         NumericSubfieldTests.class,
         })
