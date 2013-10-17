@@ -233,12 +233,14 @@ public class StanfordIndexer extends org.solrmarc.index.SolrIndexer
 
 		if (formats.contains(Format.BOOK.toString()))
 		{
-			for (String callnum : lcCallnums) {
-				String letters = org.solrmarc.tools.CallNumUtils.getLCstartLetters(callnum);
-				if (letters != null && letters.equals("M"))
-					return COLL_VAL;
-				else
-					return null;
+			for (Item item : itemSet) {
+				if (item.getCallnumType() == CallNumberType.LC)
+				{
+					String callnum = item.getCallnum();
+					String letters = org.solrmarc.tools.CallNumUtils.getLCstartLetters(callnum);
+					if (letters != null && letters.equals("M") && !item.getLibrary().equals("LANE-MED"))
+						return COLL_VAL;
+				}
 			}
 		}
 		return null;

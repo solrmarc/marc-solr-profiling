@@ -1,8 +1,11 @@
 package edu.stanford;
 
+import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.marc4j.marc.*;
+import org.solrmarc.tools.SolrMarcIndexerException;
 
 import edu.stanford.enumValues.Format;
 
@@ -12,7 +15,7 @@ import edu.stanford.enumValues.Format;
  */
 public class CollectionTests extends AbstractStanfordTest
 {
-	private static String fldName = "collection";
+	private static String collFldName = "collection";
 	private static MarcFactory factory = MarcFactory.newInstance();
 
 	// Fixed Fields
@@ -81,7 +84,7 @@ public class CollectionTests extends AbstractStanfordTest
 		record.addVariableField(cf008generic);
 		record.addVariableField(df999musicM);
 		solrFldMapTest.assertSolrFldValue(record, "format", Format.MUSIC_SCORE.toString());
-		solrFldMapTest.assertSolrFldValue(record, fldName, "music");
+		solrFldMapTest.assertSolrFldValue(record, collFldName, "music");
 	}
 
 @Test
@@ -92,7 +95,7 @@ public class CollectionTests extends AbstractStanfordTest
 		record.addVariableField(cf008generic);
 		record.addVariableField(df999musicM);
 		solrFldMapTest.assertSolrFldValue(record, "format", Format.MUSIC_RECORDING.toString());
-		solrFldMapTest.assertSolrFldValue(record, fldName, "music");
+		solrFldMapTest.assertSolrFldValue(record, collFldName, "music");
 	}
 
 @Test
@@ -103,18 +106,30 @@ public class CollectionTests extends AbstractStanfordTest
 		record.addVariableField(cf008generic);
 		record.addVariableField(df999musicM);
 		solrFldMapTest.assertSolrFldValue(record, "format", Format.SOUND_RECORDING.toString());
-		solrFldMapTest.assertSolrFldValue(record, fldName, "music");
+		solrFldMapTest.assertSolrFldValue(record, collFldName, "music");
 	}
 
 @Test
-	public void testBookFormatWithMCallNum()
+	public void testBookFormatWithMusicMCallNum()
 	{
 		Record record = factory.newRecord();
 		record.setLeader(bookLeader);
 		record.addVariableField(cf008generic);
 	    record.addVariableField(df999musicM);
 	    solrFldMapTest.assertSolrFldValue(record, "format", Format.BOOK.toString());
-	    solrFldMapTest.assertSolrFldValue(record, fldName, "music");
+	    solrFldMapTest.assertSolrFldValue(record, collFldName, "music");
+	}
+
+
+@Test
+	public void testBookFormatWithNonMusicMCallNum()
+	{
+		Record record = factory.newRecord();
+		record.setLeader(bookLeader);
+		record.addVariableField(cf008generic);
+	    record.addVariableField(df999nonMusicM);
+	    solrFldMapTest.assertSolrFldValue(record, "format", Format.BOOK.toString());
+	    solrFldMapTest.assertSolrFldValue(record, collFldName, "music");
 	}
 
 
@@ -124,16 +139,53 @@ public class CollectionTests extends AbstractStanfordTest
 		Record record = factory.newRecord();
 		record.setLeader(bookLeader);
 		record.addVariableField(cf008generic);
-		solrFldMapTest.assertNoRecordExists(record);
+		assertEmptyCollField(record);
 
 	    record.addVariableField(df999musicNotM);
-		solrFldMapTest.assertNoRecordExists(record);
+		assertEmptyCollField(record);
 
 		record.addVariableField(df999musicML);
-		solrFldMapTest.assertNoRecordExists(record);
+		assertEmptyCollField(record);
 
 		record.addVariableField(df999nonMusicNonLCM);
-		solrFldMapTest.assertNoRecordExists(record);
+		assertEmptyCollField(record);
+	}
+
+@Test
+	public void testBookFormatWithMLaneCallNum()
+	{
+		Record record = factory.newRecord();
+		record.setLeader(bookLeader);
+		record.addVariableField(cf008generic);
+
+		DataField df999LaneM = factory.newDataField("999", ' ', ' ');
+		df999LaneM.addSubfield(factory.newSubfield('a', "M35 .L25 1895 "));
+		df999LaneM.addSubfield(factory.newSubfield('w', "LC"));
+		df999LaneM.addSubfield(barcode);
+		df999LaneM.addSubfield(loc);
+		df999LaneM.addSubfield(factory.newSubfield('m', "LANE-MED"));
+		record.addVariableField(df999LaneM);
+		assertEmptyCollField(record);
+
+		record.addVariableField(df999nonMusicNonLCM);
+		assertEmptyCollField(record);
+
+		record.addVariableField(df999musicNotM);
+		assertEmptyCollField(record);
+	}
+
+
+	private void assertEmptyCollField(Record record)
+	{
+		try
+		{
+			solrFldMapTest.assertSolrFldHasNumValues(record, collFldName, 0);
+			fail("Expected SolrMarcIndexerException for record purposely not indexed");
+		}
+		catch (SolrMarcIndexerException e)
+		{
+			assertEquals("Record  purposely not indexed because collection field is empty", e.getMessage());
+		}
 	}
 
 }
