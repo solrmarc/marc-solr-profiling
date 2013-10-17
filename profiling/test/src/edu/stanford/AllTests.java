@@ -9,7 +9,9 @@ import org.junit.runners.Suite;
         CallNumLoppingUnitTests.class,
         CallNumUtilsLoppingUnitTests.class,
         CollectionTests.class,
+        Get024Tests.class,
         LeaderByteTests.class,
+        NumericSubfieldTests.class,
         })
 
 public class AllTests
