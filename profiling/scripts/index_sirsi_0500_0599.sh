@@ -9,7 +9,7 @@
 LOG_SUBDIR=$1
 
 HOMEDIR=/home/blacklight
-SOLRMARC_BASEDIR=$HOMEDIR/music-profiling
+SOLRMARC_BASEDIR=$HOMEDIR/genre-profiling
 
 RAW_DATA_DIR=/data/sirsi/latest
 
